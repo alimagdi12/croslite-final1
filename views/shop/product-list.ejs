@@ -1,0 +1,188 @@
+<%- include('../includes/head.ejs')%>
+<style>
+    /* #women{
+display: none;
+    } */
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<link rel="stylesheet" href="./css/shop.css">
+
+</head>
+<body>
+    <%- include('../includes/navigation.ejs')%>
+
+
+
+
+<section class="products">
+
+    <div class="categories">
+        <h1>categories : </h1>
+        <h3>Gender <i class="fa fa-fw fa-chevron-circle-down mt-1" id="open-category-gender" onclick="showGender()"></i></h3>
+        <ul id="category-gender">
+            <li id="men" onclick="showMen()">MEN</li>
+            <li id="women" onclick="showWomen()">WOMEN</li>
+            <li id="kids" onclick="showKids()">KIDS</li>
+        </ul>
+        <h3 class="code">Code <i class="fa fa-fw fa-chevron-circle-down mt-1" id="open-category-code" onclick="showCode()"></i></h3>
+        <ul id="category-code">
+            <li>1010101</li>
+            <li>0101010</li>
+        </ul>
+    </div>
+
+
+
+    <div class="cards" id="men-section" >
+        <div class="card-header">
+            <h1> MEN</h1>
+        </div>
+        <% if (prods.length > 0) { %>     
+        <div class="cards-details">
+                <% for (let product of prods) { %>
+                    <%if(product.category==='men'){%>                  
+            <div class="card" data-aos="fade-left">
+                <div class="img-area">
+                    <img src="./img/store/<%= product.imageUrlFront %>" alt="" class="img-back">
+                    <img src="./img/store/<%= product.imageUrlBack %>" alt="" class="img-front">
+                </div>
+                <h2><%= product.title %></h2>
+                <h6> <%=product.description%></h6>        
+                <h6 class="price">378$</h6>
+                <a href="/products/<%= product._id %>"><button>details</button></a>
+            </div>
+            <%}%>
+            <%}%>
+            <% } else { %>
+                <h1>No Products Found!</h1>
+            <% } %>
+        </div>  
+    </div>
+
+    <div class="cards" id="women-section">
+        <div class="card-header">
+            <h1> Women</h1>
+        </div>
+        <% if (prods.length > 0) { %>     
+        <div class="cards-details">
+            <% for (let product of prods) { %>
+                <%if(product.category==='women'){%>
+            <div class="card" data-aos="fade-left">
+                <div class="img-area">
+                    <img src="./img/store/<%= product.imageUrlFront %>" alt="" class="img-back">
+                    <img src="./img/store/<%= product.imageUrlBack %>" alt="" class="img-front">
+                </div>
+                <h2><%= product.title %></h2>
+                <h6> <%=product.description%></h6>        
+                <h6 class="price">378$</h6>
+                <a href="/products/<%= product._id %>"><button>details</button></a>
+            </div>
+            <%}%>
+            <%}%>
+            <% } else { %>
+                <h1>No Products Found!</h1>
+            <% } %>
+        </div>
+
+    </div>
+    
+
+    <div class="cards" id="kids-section">
+        <div class="card-header">
+            <h1> KIDS</h1>
+        </div>
+        <% if (prods.length > 0) { %>     
+        <div class="cards-details">
+            <% for (let product of prods) { %>
+                <%if(product.category==='kids'){%>
+                <div class="card" data-aos="fade-left">
+                <div class="img-area">
+                    <img src="./img/store/<%= product.imageUrlFront %>" alt="" class="img-back">
+                    <img src="./img/store/<%= product.imageUrlBack %>" alt="" class="img-front">
+                </div>
+                <h2><%= product.title %></h2>
+                <h6> <%=product.description%></h6>        
+                <h6 class="price">378$</h6>
+                <a href="/products/<%= product._id %>"><button>details</button></a>
+
+            </div>
+            <%}%>
+            <%}%>
+            <% } else { %>
+                <h1>No Products Found!</h1>
+            <% } %>
+        </div>
+
+    </div>
+
+
+
+</section>
+
+
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+    
+    <script>
+        var btnGender = document.getElementById('open-category-gender');
+        var btnCode = document.getElementById('open-category-code');
+        var gender = document.getElementById('category-gender')
+        var code = document.getElementById('category-code')
+
+        const showGender = ()=>{
+            if(btnGender){
+                gender.style.display='block'
+            }
+        }
+        
+        const showCode = ()=>{
+            if(btnCode){
+                code.style.display='block'
+            }
+        }
+    </script>
+
+<script>
+    var men = document.getElementById('men');
+    var women = document.getElementById('women');
+    var kids = document.getElementById('kids');
+    var menSection = document.getElementById('men-section');
+    var womenSection = document.getElementById('women-section');
+    var kidsSection = document.getElementById('kids-section');
+
+    const showMen = ()=>{
+        if(men){
+            menSection.style.display = 'block';
+            womenSection.style.display = 'none';
+            kidsSection.style.display = 'none';
+        }
+    }
+    const showWomen = ()=>{
+        if(women){
+            menSection.style.display = 'none';
+            womenSection.style.display = 'block';
+            kidsSection.style.display = 'none';
+        }
+    }
+    const showKids = ()=>{
+        if(document.getElementById('kids')){
+            document.getElementById('men-section').style.display = 'none';
+            document.getElementById('women-section').style.display = 'none';
+            document.getElementById('kids-section').style.display = 'block';
+        }
+    }
+    
+</script>
+
+
+
+    <%- include('../includes/footer.ejs')%>
+</body>
+</html>

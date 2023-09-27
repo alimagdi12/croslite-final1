@@ -1,0 +1,144 @@
+<% if (isAuthenticated) { %>
+<style>
+    nav .menu{
+    position: relative;
+    width: 900px;
+    height: 100%;
+    left: 100px;
+}
+
+    nav .body ul a{
+    position: relative;
+    color: black;
+    padding: 4px;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+	text-transform: capitalize;
+    margin-right: 10px;
+}
+nav .body ul a:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s linear ;
+}
+nav .body ul a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+    
+
+}
+
+nav .body  form button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+</style>
+<%}%>
+<nav >
+    <div class="header">
+        <div class="nav-contact">
+            <ul>
+                <li> <a class="fa-solid fa-envelope"></a>info@croslite.com.eg</li>
+                <li><a class="fa-solid fa-phone" ></a>+20 10-20-30-40-50</li>
+            </ul>
+        </div>
+        <div class="social-icons">
+            <ul>
+                <a href=""><li class="fa-brands fa-facebook"></li></a>
+                <a href=""><li class="fa-solid fa-envelope"></li></a>
+                <a href=""><li class="fa-brands fa-linkedin"></li></a>
+                <a href=""><li class="fa-brands fa-tiktok"></li></a>
+            </ul>
+        </div>
+    </div>
+<div class="body">
+    <div class="logo">
+        <img src="./img/image.png" alt="">
+    </div>
+    <div class="menu">
+        <ul>
+            <a href="/" class="active"><li>home</li></a>
+            <a href="/about"><li>about</li></a>
+            <a href="/contact"><li>contact</li></a>
+            <a href="/products"><li>store</li></a>
+            <% if (isAuthenticated) { %>
+            <a href="/admin/add-product"><li>Add Products</li></a>
+            <a href="/admin/products"><li>products</li></a>
+              <% } %>
+    
+        </ul>
+    </div>
+    <% if (!isAuthenticated) { %>
+      <a href="/login" class="login">Login</a>
+      <% } else { %>
+          <form action="/logout" method="post">
+              <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+              <button type="submit" class="login">logout</button>
+          </form>
+      </li>
+    </a>
+  <% } %>
+    
+    <li class="fas fa-bars" id="btn" onclick="showNav()" ></li>
+</div>
+</nav>
+
+
+
+
+<div class="nav-mobile" id="mobile">
+    <div class="mobile">    
+        <li class="fas fa-times" id="cancel" onclick="hideNav()"></li>
+        <div class="menu-mobile">
+            <ul>
+                <a href="/" class="active"><li>home</li></a>
+                <a href="/about"><li>about</li></a>
+                <a href="/contact"><li>contact</li></a>
+                <a href="/shop"><li>store</li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="empty" id="empty" onclick="close()">
+
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+
+    var mobile = document.getElementById('mobile');
+    var btn = document.getElementById('btn')
+    var empty=document.getElementById('empty');
+    const showNav=()=>{
+        if(btn){
+            mobile.style.display='block';
+            btn.style.display='none'
+            
+        }
+    }
+    const hideNav=()=>{
+        if(empty){
+            mobile.style.display='none';
+            btn.style.display='block'
+        }
+    } 
+
+</script>
+
+

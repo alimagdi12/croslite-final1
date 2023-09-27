@@ -1,0 +1,15 @@
+
+  <!-- end hero -->
+        <main class="centered">
+            <h1><%= product.title %></h1>
+            <hr>
+            <div class="image">
+                <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+            </div>
+            <h2><%= product.price %></h2>
+            <p><%= product.details %></p>
+            <% if (isAuthenticated) { %>
+            <% } %>
+        </main>
+
+  

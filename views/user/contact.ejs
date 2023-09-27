@@ -1,0 +1,44 @@
+<!-- head tags start -->
+<%- include('../includes/head.ejs')%>
+<link rel="stylesheet" href="./css/contact.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs')%>
+
+
+<div class="contact">
+    <div class="content">
+        <div class="form" data-aos="fade-right">
+            <h2>Have Some Questions?</h2>
+            <form action="/contact" method="POST">
+                <input type="text" name="name" id="" placeholder="Enter Your Name">
+                <input type="phone" placeholder="Enter Your Number">
+                <textarea name="message" id="" placeholder="Enter Your Message"></textarea>
+                <button type="submit">send</button>
+            </form>
+        </div>
+        <div class="map" data-aos="fade-up">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.1010690764624!2d32.29146432988657!3d31.217929162023406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f99f216e51a071%3A0x3802fd86d58759aa!2z2aXZqCDZhdi12YbYuSDYp9mE2YXZhti32YLYqSDYp9mE2LXZhtin2LnZitipINis2YbZiNioINio2YjYsdiz2LnZitiv!5e0!3m2!1sen!2seg!4v1695585013515!5m2!1sen!2seg" style="border:0;" allowfullscreen=""  referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="details" data-aos="fade-left">
+            <h2>Get In Touch</h2>
+            <h4>Reach US</h4>
+            <ul>
+                <li><i class="fa-solid fa-location-dot"></i><h5>PortSaid Industrial Zone</h5></li>
+                <li><i class="fa-solid fa-envelope"></i><h5>info@croslite.com.eg</h5></li>
+                <li><i class="fa-solid fa-mobile-screen-button"></i><h5>+20 1201214015</h5></li>
+                <li><i class="fa-solid fa-phone"></i><h5>066 3255644</h5></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+    <%- include('../includes/footer.ejs')%>
+
+</body>
+</html>

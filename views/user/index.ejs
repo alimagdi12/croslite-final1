@@ -1,0 +1,244 @@
+<!-- head tags start -->
+<%- include('../includes/head.ejs')%>
+<link rel="stylesheet" href="./css/index.css">
+
+</head>
+<body>
+    <%- include('../includes/navigation.ejs')%>
+    <section class="main">
+        <img src="/img/header.webp" alt="">
+    </section>
+    
+    <div class="identity">
+        <div class="header">
+            <h1>Who Are We ?</h1>
+        </div>
+        <div class="body">
+            <div class="img">
+                <img src="/img/factory.jpg" alt="" class="fac1" data-aos="fade-right">
+                <img src="/img/factory2.webp" alt="" class="fac3" data-aos="fade-left">
+                <img src="/img/factory3.jpg" alt="" class="fac2" data-aos="fade-up">
+            </div>
+            <div class="details">
+                <ul>
+                    <div class="first" data-aos="fade-in"  data-aos-duration="1000">
+                        <li> <i class="fa-regular fa-circle-question"></i> Who Are We  <i class="fa fa-fw fa-chevron-circle-down mt-1"  id="first-open" onclick="firstOpen()"></i>
+                            <i class="fa fa-fw fa-chevron-circle-up mt-1" id="first-close" onclick="firstClose()"></i>
+                        </li>
+                        <h6 id="first-details"> We are a group of egyptian investors </h6>
+                    </div>
+    
+                    <div class="second" data-aos="fade-in"  data-aos-duration="1500">
+                        <li><i class="fa-regular fa-circle-question"></i> What is our product  <i class="fa fa-fw fa-chevron-circle-down mt-1" id="second-open" onclick="secondOpen()"></i>
+                            <i class="fa fa-fw fa-chevron-circle-up mt-1" id="second-close" onclick="secondClose()"></i>
+                        </li>
+                        <h6 id="second-details"> our products is one of the best products in the Egyptian market </h6>
+                    </div>
+                    
+                    <div class="third" data-aos="fade-in"  data-aos-duration="2000">
+                        <li> <i class="fa-regular fa-circle-question"></i> Where Are We  <i class="fa fa-fw fa-chevron-circle-down mt-1" id="third-open" onclick="thirdOpen()"></i>
+                            <i class="fa fa-fw fa-chevron-circle-up mt-1" id="third-close" onclick="thirdClose()"></i>
+                        </li>
+                        <h6 id="third-details"> Our main Factory is in PortSaid one one the leading cities in the Egyptian industrial market </h6>
+                    </div>
+    
+                    <div class="fourth" data-aos="fade-in"  data-aos-duration="2500">
+                        <li> <i class="fa-regular fa-circle-question"></i> What is our Goal  <i class="fa fa-fw fa-chevron-circle-down mt-1" id="fourth-open" onclick="fourthOpen()"></i>
+                            <i class="fa fa-fw fa-chevron-circle-up mt-1" id="fourth-close" onclick="fourthClose()"></i>
+                        </li>
+                        <h6 id="fourth-details"> Our short-term goal is to be one of the leading companies in the egyptian market </h6>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+
+
+<div class="home-menu">
+    <ul data-aos="fade-right">
+        <a href="/shop"><li>Men</li></a>
+        <a href="/shop" class="middle"><li>Women</li></a>
+        <a href="/shop"><li>Kids</li></a>
+    </ul>
+</div>
+
+<div class="home-cards">
+    <div class="card" data-aos="fade-right">
+        <div class="img">
+            <img src="/img/store/product1.jpg" alt="">
+        </div>
+        <div class="description">
+            <p class="section">men's</p>
+            <hr class="hr">
+            <h2 class="name">original crocs</h2>
+            <p class="colors">3 colors</p>
+            <h4 class="price">300$</h4>
+        </div>
+    </div>
+    <div class="card" data-aos="fade-right">
+        <div class="img">
+            <img src="/img/store/product1.jpg" alt="">
+        </div>
+        <div class="description">
+            <p class="section">men's</p>
+            <hr class="hr">
+            <h2 class="name">original crocs</h2>
+            <p class="colors">3 colors</p>
+            <h4 class="price">300$</h4>
+        </div>
+    </div>
+    <div class="card" data-aos="fade-right">
+        <div class="img">
+            <img src="/img/store/product1.jpg" alt="">
+        </div>
+        <div class="description">
+            <p class="section">men's</p>
+            <hr class="hr">
+            <h2 class="name">original crocs</h2>
+            <p class="colors">3 colors</p>
+            <h4 class="price">300$</h4>
+        </div>
+    </div>
+
+    <div class="card" data-aos="fade-right">
+        <div class="img">
+            <img src="/img/store/product1.jpg" alt="">
+        </div>
+        <div class="description">
+            <p class="section">men's</p>
+            <hr class="hr">
+            <h2 class="name">original crocs</h2>
+            <p class="colors">3 colors</p>
+            <h4 class="price">300$</h4>
+        </div>
+    </div>
+</div>
+
+
+<div class="home-img">
+    <div class="column">
+        <img src="./img/crocs2.jpeg" alt="" data-aos="fade-right">
+    </div>
+    <div class="row">
+        <div class="one"><img src="./img/crocs.jpeg" alt="" data-aos="fade-left"></div>
+        <div class="two"><img src="./img/crocs3.jpg" alt="" data-aos="fade-up"></div>
+        <div class="three"><img src="./img/crocs4.webp" alt=""data-aos="fade-left"></div>
+    </div>
+</div>
+
+    
+<!-- <div class="slider">
+    <div class="wrapper">
+        <img src="./img/store/4.jpg" alt="">
+        <img src="./img/store/10.jpg" alt="">
+        <img src="./img/store/9.jpg" alt="">
+        <img src="./img/store/9.jpg" alt="">
+        <img src="./img/store/9.jpg" alt="">
+        <img src="./img/store/9.jpg" alt="">
+
+    </div>
+</div> -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+<script>
+    var open = document.getElementById('first-open');
+    var close = document.getElementById('first-close');
+    var firstDetails = document.getElementById('first-details')
+    const firstOpen =()=>{
+        if(open){
+            firstDetails.style.display='block';
+            open.style.display='none';
+            close.style.display='inline-block';
+        }
+    }
+    const firstClose =()=>{
+        if(close){
+            firstDetails.style.display='none';
+            open.style.display='inline-block';
+            close.style.display='none';
+        }
+    }
+
+
+    var secondopen = document.getElementById('second-open');
+    var secondclose = document.getElementById('second-close');
+    var secondDetails = document.getElementById('second-details')
+    const secondOpen =()=>{
+        if(secondopen){
+            secondDetails.style.display='inline-block';
+            secondopen.style.display='none';
+            secondclose.style.display='inline-block';
+        }
+    }
+    const secondClose =()=>{
+        if(secondClose){
+            secondDetails.style.display='none';
+            secondopen.style.display='inline-block';
+            secondclose.style.display='none';
+        }
+    }
+
+
+    var thirdopen = document.getElementById('third-open');
+    var thirdclose = document.getElementById('third-close');
+    var thirdDetails = document.getElementById('third-details')
+    const thirdOpen =()=>{
+        if(thirdopen){
+            thirdDetails.style.display='inline-block';
+            thirdopen.style.display='none';
+            thirdclose.style.display='inline-block';
+        }
+    }
+    const thirdClose =()=>{
+        if(thirdclose){
+            thirdDetails.style.display='none';
+            thirdopen.style.display='inline-block';
+            thirdclose.style.display='none';
+        }
+    }
+
+
+    var fourthopen = document.getElementById('fourth-open');
+    var fourthclose = document.getElementById('fourth-close');
+    var fourthDetails = document.getElementById('fourth-details')
+    const fourthOpen =()=>{
+        if(fourthopen){
+            fourthDetails.style.display='inline-block';
+            fourthopen.style.display='none';
+            fourthclose.style.display='inline-block';
+        }
+    }
+    const fourthClose =()=>{
+        if(fourthclose){
+            fourthDetails.style.display='none';
+            fourthopen.style.display='inline-block';
+            fourthclose.style.display='none';
+        }
+    }
+</script>
+<!-- <script>
+    var img = document.getElementById('img');
+    var imgContent = document.getElementById('img-content');
+    const mouseEnter=()=>{
+        img.style.opacity=.5
+        imgContent.style.display='block'
+
+    }
+    const mouseLeave=()=>{
+        img.style.opacity=1;
+        imgContent.style.display='none'
+    }
+</script> -->
+
+
+    <%- include('../includes/footer.ejs')%>
+</body>
+</html>

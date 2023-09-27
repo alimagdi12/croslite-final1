@@ -1,0 +1,92 @@
+
+  <%- include('../includes/head.ejs')%>
+  <link rel="stylesheet" href="./css/login.css">
+  
+  </head>
+  <body>
+      <%- include('../includes/navigation.ejs')%>
+  
+      <div class="login">
+          <div class="details">
+            <h1>Login with us to gain the best Experience</h1>
+            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque fuga excepturi eos sapiente fugit accusantium tempore ratione sed</h6>
+          </div>
+          
+          <div class="form" id="login">
+            <h1>Login</h1>
+            <% if (errorMessage) { %>
+            <p style="color: red;text-align: center;"><%= errorMessage %></p>
+            <%}%>
+            <form action="/login" method="POST">
+              <input type="email" name="email" placeholder="Enter Your E-mail" />
+              <input type="password" name="password" placeholder="Enter Your Password" />
+              <a href="/reset">Forget Your Password</a><br>
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <button type="submit">LOGIN</button>
+            </form>
+              <h5> Don't have an account? <a id=<% if (isAuthenticated) { %>
+                "signup-button"<%}else{""}%> onclick="signup()"> Signup now</a></h5>
+            <div class="social signup-social">
+              <ul>
+                <a href=""><li><i class="fa-brands fa-facebook"></i></li></a>
+                <a href=""><li><i class="fa-brands fa-tiktok"></i></li></a>
+                <a href=""><li><i class="fa-brands fa-linkedin"></i></li></a>
+                <a href=""><li><i class="fa-solid fa-envelope"></i></li></a>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="form signup" id='signup'>
+              <h1>Sign Up</h1>
+              <% if (errorMessage) { %>
+              <p style="color: red;text-align: center;"><%= errorMessage %></p>
+              <%}%>
+              <form action="/signup" method="POST">
+                <input type="email" name="signupEmail" placeholder="Enter Your E-mail" />
+                <input type="password" name="signupPassword" placeholder="Enter Your Password" />
+                <input type="password" name="password" placeholder="Confirm Your Password" />
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit">Sign UP</button>
+              </form>
+                <h5> Already have an account? <a id="login-button" onclick="login()"> Login now</a></h5>
+              <div class="social">
+                <ul>
+                  <a href=""><li><i class="fa-brands fa-facebook"></i></li></a>
+                  <a href=""><li><i class="fa-brands fa-tiktok"></i></li></a>
+                  <a href=""><li><i class="fa-brands fa-linkedin"></i></li></a>
+                  <a href=""><li><i class="fa-solid fa-envelope"></i></li></a>
+                </ul>
+              </div>
+            </div>
+          
+      </div>
+      
+      
+  <script>
+      var loginForm = document.getElementById('login');
+      var signupForm = document.getElementById('signup');
+      var loginButton = document.getElementById('login-button');
+      var signupButton = document.getElementById('signup-button');
+      const login =()=>{
+          if(loginButton){
+              loginForm.style.display='block';
+              signupForm.style.display='none';
+  
+          }
+      }
+      const signup=()=>{
+          if(signupButton){
+              loginForm.style.display='none';
+              signupForm.style.display='block';
+  
+          }
+      }
+  
+  </script>
+  
+  
+      <%- include('../includes/footer.ejs')%>
+  </body>
+  </html>
+
+
