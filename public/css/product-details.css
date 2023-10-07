@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+
+}
+h6{
+    font-size: 12px;
+    font-weight: 500;
+    position: relative;
+    left: 2%;
+    margin-top: 20px;
+    cursor: pointer;
+    color: rgb(105, 105, 105);
+}
+.details{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+.details .img-icons{
+    position: relative;
+    left: 2%;
+    width:3.8%;
+    height: 250px;
+    display: block  ;
+}
+.details .img-icons img{
+    width: 100%;
+    height: 17%;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: block;
+}
+
+.details .img-icons img:hover{
+    width: 110%;
+    height: 20%;
+    display: block;
+    box-shadow: 0px 0 5px rgb(0, 74, 0);
+}
+
+.details .product-img{
+    width: 35%;
+    height: 500px;
+    position: relative;
+    left: 5%;
+}
+.details .product-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.details .product-img #img2,.details .product-img #img3,.details .product-img #img4{
+    display: none;
+}
+
+.details .product-details{
+    position: relative;
+    left: 7%;
+}
+.details .product-details h1{
+    font-weight: 400;
+    font-size: 25px;
+    position: relative;
+}
+.details .product-details a{
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+    top: 0;
+    text-decoration: none;
+    color:#007185;
+}
+.details .product-details a:hover{
+    background: transparent;
+    text-decoration: underline;
+}
+.details .product-details .rating{
+    position: relative;
+}
+.details .product-details .rating .checked{
+    color: orange;
+}
+.details .product-details h4 span{
+    font-size: 13px;
+    font-weight: 200;
+}
+.details .product-details .prod-details{
+    position: relative;
+    color: black;
+    margin-top: 0;
+    font-weight: 300;
+}
+.details .product-details .prod-description{
+    position: relative;
+    top: -35px;
+    color: black;
+    font-weight: 500;
+    
+}
+.details .product-details ul{
+    position: relative;
+    top: -55px;
+}
+
+
+
+
+@media (min-width:200px)and (max-width:600px) {
+.details{
+    display: block;
+    width: 100%;
+}
+.details .img-icons{
+    width: 90%;
+    display: flex;
+}
+.details .product-img{
+    width: 90%;
+    margin-top: -150px;
+}
+.details .product-details{
+    width: 90%;
+    display: block;
+    flex-wrap: wrap;
+}
+
+}
+
+@media (min-width:600px) and (max-width:810px) {
+    .details{
+        display: block;
+        width: 95%;
+        height: auto;
+    }
+    .details .img-icons{
+        width: 100%;
+        display: flex;
+        margin-bottom: 35px;
+    }
+    .details .img-icons img{
+        height: 100px;
+    }
+    .details .product-img{
+        width: 90%;
+        margin-top: -150px;
+    }
+    .details .product-details{
+        width: 90%;
+        display: block;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media(min-width:810px) and  (max-width:910px) {
+.details{
+    position: relative;
+    width: 100%;
+}
+.details .img-icons{
+    position: relative;
+    width: 12%;
+}
+.details .product-img{
+    width: 55%;
+}
+.details .product-details{
+    width: 25%;
+}
+.details .product-details .rating,.details .product-details h5 {
+    width: 90%;
+}
+}
+
+@media(min-width:910px) and  (max-width:950px) {
+    .details{
+        position: relative;
+        width: 100%;
+    }
+    .details .img-icons{
+        position: relative;
+        width: 12%;
+    }
+    .details .product-img{
+        width: 55%;
+    }
+    .details .product-details{
+        width: 25%;
+    }
+    .details .product-details .rating,.details .product-details h5 {
+        width: 90%;
+    }
+}
+
+@media(min-width:950px) and  (max-width:1150px) {
+    .details{
+        position: relative;
+        width: 100%;
+    }
+    .details .img-icons{
+        position: relative;
+        width: 12%;
+    }
+    .details .product-img{
+        width: 55%;
+    }
+    .details .product-details{
+        width: 25%;
+    }
+    .details .product-details .rating,.details .product-details h5 {
+        width: 90%;
+    }
+
+}
+
+@media(min-width:1150px) and  (max-width:1300px) {
+    .details{
+        position: relative;
+        width: 100%;
+    }
+    .details .img-icons{
+        position: relative;
+        width: 12%;
+    }
+    .details .product-img{
+        width: 55%;
+    }
+    .details .product-details{
+        width: 25%;
+    }
+    .details .product-details .rating,.details .product-details h5 {
+        width: 90%;
+    }
+
+}

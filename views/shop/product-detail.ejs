@@ -1,15 +1,110 @@
+<!-- head tags start -->
+<%- include('../includes/head.ejs')%>
+<link rel="stylesheet" href="/nav.css">
+<link rel="stylesheet" href="/footer.css">
+<link rel="stylesheet" href="/css/product-details.css">
+</head>
 
-  <!-- end hero -->
-        <main class="centered">
-            <h1><%= product.title %></h1>
-            <hr>
-            <div class="image">
-                <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
-            </div>
-            <h2><%= product.price %></h2>
-            <p><%= product.details %></p>
-            <% if (isAuthenticated) { %>
-            <% } %>
-        </main>
+<body>
+    <%- include('../includes/navigation.ejs')%>
 
-  
+<h6>COCO > <%= product.category%> > id > <%=product._id%></h6>
+
+<div class="details">
+
+    <div class="img-icons">
+        <img src="/img/store/test.JPG" alt="" id = "icon1" onmousemove="show1()">
+        <img src="/img/store/test2.JPG" alt="" id = "icon2" onmousemove="show2()">
+        <img src="/img/store/test3.JPG" alt="" id = "icon3" onmousemove="show3()">
+        <img src="/img/store/test4.JPG" alt="" id = "icon4" onmousemove="show4()">
+    </div>
+
+
+    <div class="product-img">
+        <img src="/img/store/test.JPG" alt="" id="img1">
+        <img src="/img/store/test2.JPG" alt="" id="img2">
+        <img src="/img/store/test3.JPG" alt="" id="img3">
+        <img src="/img/store/test4.JPG" alt="" id="img4">
+    </div>
+
+    <div class="product-details">
+        <h1><%= product.title %></h1>
+        <a href="/products">category : <%= product.category %></a>
+        <div class="rating">
+            <span>4.0</span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;66 rating out of 70</span>
+        </div>
+        <hr>
+        <h4><%= product.price %> <span> EGP </span></h4>
+        <h5 class="prod-details"><%= product.description %></h5>
+        <h5 class="prod-description"><%= product.details %></h5>
+        <ul>
+            <li>Brand Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COCO</li>
+            <li>Model Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= product.title %> </li>
+            <li>Category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= product.category %> </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    var icon1 = document.getElementById('icon1');
+    var icon2 = document.getElementById('icon2');
+    var icon3 = document.getElementById('icon3');
+    var icon4 = document.getElementById('icon4');
+    var img1 = document.getElementById('img1');
+    var img2 = document.getElementById('img2');
+    var img3 = document.getElementById('img3');
+    var img4 = document.getElementById('img4');
+
+    const show1 = ()=>{
+        if(icon1){
+            img1.style.display='block';
+            img2.style.display='none';
+            img3.style.display='none';
+            img4.style.display='none';
+        }
+    }
+    
+    const show2 = ()=>{
+        if(icon2){
+            img1.style.display = 'none';
+            img2.style.display = 'block';
+            img3.style.display = 'none';
+            img4.style.display = 'none'
+        }
+
+
+    }
+
+    const show3 = ()=>{
+        if(icon3){
+            img1.style.display = 'none';
+            img2.style.display = 'none';
+            img3.style.display = 'block';
+            img4.style.display = 'none'
+        }
+
+
+    }
+
+    const show4 = ()=>{
+        if(icon4){
+            img1.style.display = 'none';
+            img2.style.display = 'none';
+            img3.style.display = 'none';
+            img4.style.display = 'block'
+        }
+
+
+    }
+</script>
+    
+    <%- include('../includes/footer.ejs')%>
+
+</body>
+</html>

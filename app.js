@@ -71,6 +71,8 @@ mongoose
   .connect(MONGODB_URI)
   .then(result => {
     app.listen(5000);
+    console.log('DataBase Coneected successfully');
+    console.log("Server Is Running On Port 5000");
   })
   .catch(err => {
     console.log(err);
