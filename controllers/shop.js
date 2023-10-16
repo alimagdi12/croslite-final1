@@ -29,4 +29,11 @@ exports.getProduct = (req, res, next) => {
 };
 
 
-
+exports.postSearch = (req,res,next)=>{
+  const search = req.body.search;
+  Product.find({title:search})
+  .then(search=>{
+    console.log(search);
+  })
+  res.redirect('/products')
+}

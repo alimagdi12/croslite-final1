@@ -47,7 +47,7 @@ nav .body  form button{
 </style>
 <%}%>
 <nav >
-    <div class="header">
+    <div class="header" id="header">
         <div class="nav-contact">
             <ul>
                 <li> <a class="fa-solid fa-envelope"></a>info@croslite.com.eg</li>
@@ -62,7 +62,19 @@ nav .body  form button{
                 <a href=""><li class="fa-brands fa-tiktok"></li></a>
             </ul>
         </div>
+        
+        <% if (!isAuthenticated) { %>
+            <a href="/login" class="login">Login</a>
+            <% } else { %>
+                <form action="/logout" method="post">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+                    <button type="submit" class="login">logout</button>
+                </form>
+            </li>
+          </a>
+        <% } %>
     </div>
+
 <div class="body">
     <div class="logo">
         <img src="/image.png" alt="">
@@ -80,16 +92,7 @@ nav .body  form button{
     
         </ul>
     </div>
-    <% if (!isAuthenticated) { %>
-      <a href="/login" class="login">Login</a>
-      <% } else { %>
-          <form action="/logout" method="post">
-              <input type="hidden" name="_csrf" value="<%= csrfToken%>">
-              <button type="submit" class="login">logout</button>
-          </form>
-      </li>
-    </a>
-  <% } %>
+    
     
     <li class="fas fa-bars" id="btn" onclick="showNav()" ></li>
 </div>
@@ -140,5 +143,18 @@ nav .body  form button{
     } 
 
 </script>
+
+<!-- <script>
+    window.onscroll = function() {myFunction()};
+    var header = document.getElementById("header");
+    var sticky = navbar.offsetTop;
+    function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    header.classList.add("sticky")
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script> -->
 
 

@@ -44,7 +44,7 @@ ul{
 	content: '';
 	position: absolute;
 	bottom: -10px;
-	background-color: #e91e63;
+	background-color: rgb(32, 104, 53);;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -104,7 +104,7 @@ footer form button{
     margin-top: 12px;
     margin-left: 28px;
     padding: 5px;
-    background-color: #e91e63;
+    background-color: rgb(32, 104, 53);;
     border-radius: 7px;
     color: white;
     font-size: 16px;

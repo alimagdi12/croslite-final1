@@ -11,6 +11,11 @@
 <section class="products">
 
     <div class="categories">
+        <form action="/search" method="post">
+            <input type="text" name="search" id="">
+            <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+            <button type="submit">Search</button>
+        </form>
         <h1>categories : </h1>
         <h3>Gender <i class="fa fa-fw fa-chevron-circle-down mt-1" id="open-category-gender" onclick="showGender()"></i></h3>
         <ul id="category-gender">
@@ -29,7 +34,7 @@
 
     <div class="cards" id="men-section" >
         <div class="card-header">
-            <h1> MEN</h1>
+            <h1> COCO > MEN  </h1>
         </div>
         <% if (prods.length > 0) { %>     
         <div class="cards-details">
@@ -55,7 +60,7 @@
 
     <div class="cards" id="women-section">
         <div class="card-header">
-            <h1> Women</h1>
+            <h1> COCO > WOMEN</h1>
         </div>
         <% if (prods.length > 0) { %>     
         <div class="cards-details">
@@ -83,7 +88,7 @@
 
     <div class="cards" id="kids-section">
         <div class="card-header">
-            <h1> KIDS</h1>
+            <h1> COCO > KIDS</h1>
         </div>
         <% if (prods.length > 0) { %>     
         <div class="cards-details">
