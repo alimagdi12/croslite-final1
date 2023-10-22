@@ -120,9 +120,9 @@
 }
 .home-cards .card:hover{
     width: 20%;
-    box-shadow: 1px 1px 10px 1px rgb(243, 243, 243),
-    1px -1px 10px 1px rgb(243, 243, 243),
-    -1px 1px 10px 1px rgb(207, 206, 206);
+    box-shadow: .5px 1px 1px 1px rgb(243, 243, 243),
+    .5px -1px 1px 1px rgb(243, 243, 243),
+    -.5px 1px 1px 1px rgb(207, 206, 206);
     .img{
         width: 100%;
     };

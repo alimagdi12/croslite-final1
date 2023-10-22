@@ -13,4 +13,6 @@ router.get('/products/:productId', shopController.getProduct);
 
 router.post('/search',shopController.postSearch)
 
+router.get('/search',shopController.getSearch)
+
 module.exports = router;

@@ -14,7 +14,7 @@
         <form action="/search" method="post">
             <input type="text" name="search" id="">
             <input type="hidden" name="_csrf" value="<%= csrfToken%>">
-            <button type="submit">Search</button>
+            <button type="submit" >Search</button>
         </form>
         <h1>categories : </h1>
         <h3>Gender <i class="fa fa-fw fa-chevron-circle-down mt-1" id="open-category-gender" onclick="showGender()"></i></h3>
@@ -46,7 +46,8 @@
                     <img src="./img/store/<%= product.imageUrlBack %>" alt="" class="img-front">
                 </div>
                 <h2><%= product.title %></h2>
-                <h6> <%=product.description%></h6>        
+                <h6> <%=product.description%></h6> 
+                <h6>id : <%= product._id%></h6>       
                 <h6 class="price">378$</h6>
                 <a href="/products/<%= product._id %>"><button>details</button></a>
             </div>
@@ -115,6 +116,34 @@
     </div>
 
 
+    <div class="cards" id="search-section" >
+        <div class="card-header">
+            <h1> COCO > <%= prods.category%>  </h1>
+        </div>
+        <% if (prods.length > 0) { %>     
+        <div class="cards-details">
+                <% for (let product of prods) { %>
+                    <%if(result){%>                  
+            <div class="card" data-aos="fade-left">
+                <div class="img-area">
+                    <img src="./img/store/<%= product.imageUrlFront %>" alt="" class="img-back">
+                    <img src="./img/store/<%= product.imageUrlBack %>" alt="" class="img-front">
+                </div>
+                <h2><%= product.title %></h2>
+                <h6> <%=product.description%></h6> 
+                <h6>id : <%= product._id%></h6>       
+                <h6 class="price">378$</h6>
+                <a href="/products/<%= product._id %>"><button>details</button></a>
+            </div>
+            <%}%>
+            <%}%>
+            <% } else { %>
+                <h1>No Products Found!</h1>
+            <% } %>
+        </div>  
+    </div>
+
+
 
 </section>
 
@@ -149,15 +178,19 @@
     var men = document.getElementById('men');
     var women = document.getElementById('women');
     var kids = document.getElementById('kids');
+    var search = document.getElementById('search')
     var menSection = document.getElementById('men-section');
     var womenSection = document.getElementById('women-section');
     var kidsSection = document.getElementById('kids-section');
+    var searchSection = document.getElementById('search-section')
 
     const showMen = ()=>{
         if(men){
             menSection.style.display = 'block';
             womenSection.style.display = 'none';
             kidsSection.style.display = 'none';
+            searchSection.style.display='none';
+
         }
     }
     const showWomen = ()=>{
@@ -165,6 +198,8 @@
             menSection.style.display = 'none';
             womenSection.style.display = 'block';
             kidsSection.style.display = 'none';
+            searchSection.style.display='none';
+
         }
     }
     const showKids = ()=>{
@@ -172,6 +207,8 @@
             document.getElementById('men-section').style.display = 'none';
             document.getElementById('women-section').style.display = 'none';
             document.getElementById('kids-section').style.display = 'block';
+            document.getElementById('search-section').style.display='none';
+
         }
     }
     

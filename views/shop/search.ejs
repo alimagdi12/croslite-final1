@@ -1,0 +1,138 @@
+<%- include('../includes/head.ejs')%>
+<link rel="stylesheet" href="./css/shop.css">
+
+</head>
+<body>
+    <%- include('../includes/navigation.ejs')%>
+
+
+
+
+<section class="products">
+
+    <div class="categories">
+        <h1>categories : </h1>
+        <h3>Gender <i class="fa fa-fw fa-chevron-circle-down mt-1" id="open-category-gender" onclick="showGender()"></i></h3>
+        <ul id="category-gender">
+            <li id="men" onclick="showMen()">MEN</li>
+            <li id="women" onclick="showWomen()">WOMEN</li>
+            <li id="kids" onclick="showKids()">KIDS</li>
+        </ul>
+        <h3 class="code">Code <i class="fa fa-fw fa-chevron-circle-down mt-1" id="open-category-code" onclick="showCode()"></i></h3>
+        <ul id="category-code">
+            <li>1010101</li>
+            <li>0101010</li>
+        </ul>
+        <h3><%= sear.title%></h3>
+    </div>
+
+
+
+    <div class="cards" id="men-section" >
+        <div class="card-header">
+            <h1> COCO > MEN  </h1>
+        </div>
+        <% if (sear.length > 0) { %>     
+        <div class="cards-details">
+                <% for (let search of sear) { %>
+            <div class="card" data-aos="fade-left">
+                <div class="img-area">
+                    <img src="./img/store/<%= search.imageUrlFront %>" alt="" class="img-back">
+                    <img src="./img/store/<%= search.imageUrlBack %>" alt="" class="img-front">
+                </div>
+                <h2><%= search.title %></h2>
+                <h6> <%=search.description%></h6> 
+                <h6>id : <%= search._id%></h6>       
+                <h6 class="price">378$</h6>
+                <a href="/products/<%= search._id %>"><button>details</button></a>
+            </div>
+            <%}%>
+            <% } else { %>
+                <h1>No Search Results!</h1>
+            <% } %>
+        </div>  
+    </div>
+
+    
+
+</section>
+
+
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+    
+    <script>
+        var btnGender = document.getElementById('open-category-gender');
+        var btnCode = document.getElementById('open-category-code');
+        var gender = document.getElementById('category-gender')
+        var code = document.getElementById('category-code')
+
+        const showGender = ()=>{
+            if(btnGender){
+                gender.style.display='block'
+            }
+        }
+        
+        const showCode = ()=>{
+            if(btnCode){
+                code.style.display='block'
+            }
+        }
+    </script>
+
+<script>
+    var men = document.getElementById('men');
+    var women = document.getElementById('women');
+    var kids = document.getElementById('kids');
+    var search = document.getElementById('search')
+    var menSection = document.getElementById('men-section');
+    var womenSection = document.getElementById('women-section');
+    var kidsSection = document.getElementById('kids-section');
+    var searchSection = document.getElementById('search-section')
+
+    const showMen = ()=>{
+        if(men){
+            menSection.style.display = 'block';
+            womenSection.style.display = 'none';
+            kidsSection.style.display = 'none';
+            searchSection.style.display='none';
+
+        }
+    }
+    const showWomen = ()=>{
+        if(women){
+            menSection.style.display = 'none';
+            womenSection.style.display = 'block';
+            kidsSection.style.display = 'none';
+            searchSection.style.display='none';
+
+        }
+    }
+    const showKids = ()=>{
+        if(document.getElementById('kids')){
+            document.getElementById('men-section').style.display = 'none';
+            document.getElementById('women-section').style.display = 'none';
+            document.getElementById('kids-section').style.display = 'block';
+            document.getElementById('search-section').style.display='none';
+
+        }
+    }
+    const showSearch = ()=>{
+        if(search){
+            menSection.style.display = 'none';
+            womenSection.style.display = 'none';
+            kidsSection.style.display = 'none';
+            searchSection.style.display='block';
+        }
+    }
+</script>
+
+
+
+    <%- include('../includes/footer.ejs')%>
+</body>
+</html>
