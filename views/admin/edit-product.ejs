@@ -29,6 +29,13 @@
     <%- include('../includes/navigation.ejs')%>
 <div class="products">
     <h1><% if (editing) { %>Edit Product <%} else { %>Add Product<% } %></h1>
+
+
+    <form action="/upload?_csrf=<%= csrfToken%>" method="POST" enctype="multipart/form-data" >
+        <input type="file" name="image" accept="image/*">
+        <button type="submit">upload</button>
+    </form>    
+
     <form action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
         <label for=""> Product Category</label>
         <select type="text" name="category" id="category" value="<% if (editing) { %><%= product.category %><% } %>">
@@ -38,9 +45,12 @@
         </select>
         <label for=""> Product Name</label>
         <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>">
+
+        
         <label for=""> Product Image Front <i class="fa-regular fa-image" id="img-icon" onclick="showImg()"></i><i class="fa-regular fa-image" id="img-icon-close" onclick="hideImg()"></i></label>
         <% if (editing) { %>  <img src="/<%= product.imageUrlFront %>" alt="" id="img"> <% } %>
         <input type="text" name="imageUrlFront" id="imageUrl" value="<% if (editing) { %><%= product.imageUrlFront %><% } %>">
+      
         <label for=""> Product Image Back</label>
         <input type="text" name="imageUrlBack" id="imageUrl" value="<% if (editing) { %><%= product.imageUrlBack %><% } %>">
         <label for=""> Product Price</label>

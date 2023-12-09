@@ -1,4 +1,26 @@
 const Product = require('../models/product');
+const express = require('express');
+
+
+
+
+
+// const fileUpload = require('express-fileupload');
+// const app = express();
+// app.use(
+//   fileUpload({
+//       limits: {
+//           fileSize: 10000000,
+//       },
+//       abortOnLimit: true,
+//   })
+// );
+
+
+
+
+
+
 
 exports.getAddProduct = (req, res, next) => {
   res.render('admin/edit-product', {
@@ -107,3 +129,17 @@ exports.postDeleteProduct = (req, res, next) => {
     })
     .catch(err => console.log(err));
 };
+
+exports.postUpload =(req, res) => {
+  // Get the file that was set to our field named "image"
+  const { image } = req.files;
+
+  // If no image submitted, exit
+  if (!image) return res.sendStatus(400);
+
+  // Move the uploaded image to our upload folder
+  image.mv(__dirname + './upload/' + image.name);
+
+  res.sendStatus(200);
+  res.redirect('/admin/add-product')
+}

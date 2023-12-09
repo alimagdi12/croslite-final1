@@ -46,6 +46,7 @@ nav .body  form button{
 }
 </style>
 <%}%>
+<link rel="stylesheet" href="nav.css">
 <nav >
     <div class="header" id="header">
         <div class="nav-contact">
@@ -99,9 +100,53 @@ nav .body  form button{
 </nav>
 
 
+<div class="mobile" id="mobile">
+    <div class="mobile-nav">
+        <ul>
+            <a href="/" class="active"
+            ><li>home</li></a>
+            <a href="/about" ><li>about</li></a>
+            <a href="/contact" ><li>contact</li></a>
+            <a href="/products" ><li>store</li></a>
+            <% if (!isAuthenticated) { %>
+                <li class="login"><a href="/login" style="list-style: none;
+                text-decoration: none;
+                font-family: 'Roboto', sans-serif;
+                font-size: 30px;
+                font-weight: 300;
+                text-transform: capitalize;
+                color: white;
+                background-color: rgb(32, 104, 53);
+                padding: 15px;
+                margin-top: 1px;
+                border-radius: 10px;
+                ">Login</a></li>
+                <% } else { %>
+                    <form action="/logout" method="post">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+                        <button type="submit" class="login">logout</button>
+                    </form>
+                </li>
+              </a>
+            <% } %>
+        </ul>
+    </div>
+    <div id="close" onclick="hide()">
 
-
-<div class="nav-mobile" id="mobile">
+    </div>
+</div>
+<script>
+    mobile = document.getElementById('mobile')
+    const hide=()=>{
+        mobile.style.display='none'
+    }
+    const showNav=()=>{
+            mobile.style.display='flex';
+            
+        
+    }
+</script>
+<!-- <div class="nav-mobile" id="mobile">
     <div class="mobile">    
         <li class="fas fa-times" id="cancel" onclick="hideNav()"></li>
         <div class="menu-mobile">
@@ -116,13 +161,13 @@ nav .body  form button{
     <div class="empty" id="empty" onclick="close()">
 
     </div>
-</div>
+</div> -->
 
 
 
 
 
-
+<!-- 
 <script>
 
     var mobile = document.getElementById('mobile');
@@ -142,7 +187,7 @@ nav .body  form button{
         }
     } 
 
-</script>
+</script> -->
 
 <!-- <script>
     window.onscroll = function() {myFunction()};

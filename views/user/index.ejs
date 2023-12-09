@@ -6,18 +6,19 @@
 <body>
     <%- include('../includes/navigation.ejs')%>
     
-    <div class="slider">
-        <div class="wrapper">
-            <img src="/img/header.webp" alt="">
-            <img src="/img/header.webp" alt="">
-            <img src="/img/header.webp" alt="">
-            <img src="/img/header.webp" alt="">
-            <img src="/img/header.webp" alt="">
-            <img src="/img/header.webp" alt="">
-
-        </div>
+    <div class="slideShow">
+        <!-- <button onclick="stopSlide()">stop</button>
+        <button onclick="startSlide()">slide show</button><br> -->
+        <i class="fa-solid fa-arrow-left" id="left" onclick="slideLeft()"  ></i>
+        <img src="/img/header.webp" class="slide active" data-aos="fade-left">
+        <img src="/img/header2.webp" class="slide" data-aos="fade-left">
+        <img src="/img/header3.avif" class="slide" data-aos="fade-left">
+        <img src="/img/header4.webp" class="slide" data-aos="fade-left">
+        <img src="/img/header5.jpg" class="slide" data-aos="fade-left">
+        <img src="/img/header6.webp" class="slide" data-aos="fade-left">
+        <i class="fa-solid fa-arrow-right" id="right" style="margin-left: 10px;" onclick="slideRight()" id="right"></i>
     </div>
-
+    
     
     <div class="identity">
         <div class="header">
@@ -67,56 +68,128 @@
 
 
 
-
 <div class="home-menu">
-    <ul data-aos="fade-right">
-        <a href="/shop"><li>Men</li></a>
-        <a href="/shop" class="middle"><li>Women</li></a>
-        <a href="/shop"><li>Kids</li></a>
-    </ul>
+    <hr>
+    <a href="/products">Shop now</a><h1>>></h1>
+    <hr>
 </div>
+
+
 
 <div class="home-cards">
-    <div class="card" data-aos="fade-right">
+    <div class="card" data-aos="fade-right" onmousemove="showImg()" onmouseleave="hideImg()" >
         <div class="img">
-            <img src="/img/store/product1.jpg" alt="">
+            <img src="/img/store/product1.jpg" alt="" id="img">
         </div>
-        <div class="description">
-            <p class="section">men's</p>
+        <div class="sm-img" id="sm-img" style="display:none;width: 100%;text-align: center; margin-top: 50px;margin-bottom: 40px;" >
+            <img src="/img/store/colore1.webp" alt="" style="width:30%;margin-right: 10px;"  onmousemove="changeImg(this)">
+            <img src="/img/store/yellow1.webp" alt="" style="width:30%" onmousemove="changeImg(this)">            
+        </div>
+        <div class="description" style="margin-left: 50px;margin-top:10px;margin-bottom: 150px;height:50px">
             <hr class="hr">
+            <p class="section">men's</p>
             <h2 class="name">original crocs</h2>
             <p class="colors">3 colors</p>
             <h4 class="price">300$</h4>
         </div>
     </div>
-    <div class="card" data-aos="fade-right">
-        <div class="img">
-            <img src="/img/store/product1.jpg" alt="">
-        </div>
-        <div class="description">
-            <p class="section">men's</p>
-            <hr class="hr">
-            <h2 class="name">original crocs</h2>
-            <p class="colors">3 colors</p>
-            <h4 class="price">300$</h4>
-        </div>
-    </div>
-    <div class="card" data-aos="fade-right">
-        <div class="img">
-            <img src="/img/store/product1.jpg" alt="">
-        </div>
-        <div class="description">
-            <p class="section">men's</p>
-            <hr class="hr">
-            <h2 class="name">original crocs</h2>
-            <p class="colors">3 colors</p>
-            <h4 class="price">300$</h4>
-        </div>
-    </div>
+    
+<script>
+    var img=document.getElementById('img');
+    var imgSrc=img.src
+    var smImg=document.getElementById('sm-img');
+    const changeImg =(i)=>{
+        img.src=i.src
+    }
+    const showImg =()=>{
+        smImg.style.display='block';
+    }
+    const hideImg=()=>{
+        smImg.style.display='none';
+        img.src=imgSrc;
+    }
+</script>
 
-    <div class="card" data-aos="fade-right">
+    <div class="card" data-aos="fade-right" onmousemove="show2()" onmouseleave="hide2()">
         <div class="img">
-            <img src="/img/store/product1.jpg" alt="">
+            <img src="/img/store/product1.jpg" alt="" id="img2">
+        </div>
+        <div id="sm-img2" style="width: 100%;text-align: center; margin-top: 50px;margin-bottom: 40px;" >
+            <img src="/img/store/colore1.webp" alt="" style="width:30%;margin-right: 10px;" onmousemove="changeImg2(this)">
+            <img src="/img/store/yellow1.webp" alt="" style="width:30%" onmousemove="changeImg2(this)">            
+        </div>
+        <div class="description">
+            <p class="section">men's</p>
+            <hr class="hr">
+            <h2 class="name">original crocs</h2>
+            <p class="colors">3 colors</p>
+            <h4 class="price">300$</h4>
+        </div>
+    </div>
+    <script>
+        smImg2 = document.getElementById('sm-img2');
+        img2 = document.getElementById('img2');
+        imgSrc2 = img2.src;
+        const changeImg2=(e)=>{
+            img2.src = e.src;
+        }
+        const show2 = ()=>{
+            smImg2.style.display='block'
+        }
+        const hide2=()=>{
+        smImg2.style.display='none';
+        img2.src = imgSrc2
+        }
+        
+        
+    </script>
+
+
+    <div class="card" data-aos="fade-right" onmousemove="show3()" onmouseleave="hide3()">
+        <div class="img">
+            <img src="/img/store/product1.jpg" alt="" id="img3">
+        </div>
+        <div class="sm-img" id="sm-img3" style="display:none;width: 100%;text-align: center; margin-top: 50px;margin-bottom: 40px;" >
+            <img src="/img/store/colore1.webp" alt="" style="width:30%;margin-right: 10px;"  onmousemove="changeImg3(this)">
+            <img src="/img/store/yellow1.webp" alt="" style="width:30%" onmousemove="changeImg3(this)">            
+        </div>
+        <div class="description">
+            <p class="section">men's</p>
+            <hr class="hr">
+            <h2 class="name">original crocs</h2>
+            <p class="colors">3 colors</p>
+            <h4 class="price">300$</h4>
+        </div>
+    </div>
+    <script>
+        smImg3 = document.getElementById('sm-img3');
+        img3 = document.getElementById('img3');
+        imgSrc3 = img3.src;
+        const changeImg3=(e)=>{
+            img3.src = e.src;
+        }
+        const show3 = ()=>{
+            smImg3.style.display='block'
+        }
+        const hide3=()=>{
+        smImg3.style.display='none';
+        img3.src = imgSrc3
+        }
+        
+        
+    </script>
+
+
+
+
+
+    <div class="card" data-aos="fade-right" onmousemove="show4()" onmouseleave="hide4()">
+        <div class="img">
+            <img src="/img/store/product1.jpg" alt="" id="img4">
+        </div>
+        <div class="sm-img" id="sm-img4" style="display:none;width: 100%;text-align: center; margin-top: 50px;margin-bottom: 40px;" >
+            <img src="/img/store/colore1.webp" alt="" style="width:30%;margin-right: 10px;"  onmousemove="changeImg4(this)">
+            <img src="/img/store/yellow1.webp" alt="" style="width:30%" onmousemove="changeImg4(this)">            
         </div>
         <div class="description">
             <p class="section">men's</p>
@@ -127,6 +200,23 @@
         </div>
     </div>
 </div>
+<script>
+    smImg4 = document.getElementById('sm-img4');
+    img4 = document.getElementById('img4');
+    imgSrc4 = img4.src;
+    const changeImg4=(e)=>{
+        img4.src = e.src;
+    }
+    const show4 = ()=>{
+        smImg4.style.display='block'
+    }
+    const hide4=()=>{
+    smImg4.style.display='none';
+    img4.src = imgSrc4
+    }
+    
+    
+</script>
 
 
 <div class="home-img">
@@ -236,6 +326,53 @@
         imgContent.style.display='none'
     }
 </script> -->
+<script>
+    window.addEventListener('scroll', function() {
+      var header = document.getElementById("header");
+      var sticky = header.offsetTop;
+    
+      if (window.pageYOffset >= sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    });
+    </script>
+
+    <script>
+    var intervalId;
+    const left = document.getElementById('left');
+    const right = document.getElementById('right');
+    const slides = document.querySelectorAll('.slide');
+    // console.log(slides);
+    var counter = 0;
+    function slideRight(){
+    slides[counter].classList.remove('active');
+    counter++;
+    if (counter >= slides.length) {
+        counter = 0;
+    }
+    slides[counter].classList.add('active');
+    }
+    const slideLeft=()=>{
+    slides[counter].classList.remove('active');
+    counter--;
+    if (counter < 0) {
+        counter = slides.length -1;
+    }
+    slides[counter].classList.add('active');
+}
+intervalId = setInterval(slideRight, 3000); // Store the interval ID
+  
+// const startSlide = () => {
+//     intervalId = setInterval(slideRight, 2000); // Store the interval ID
+//   }
+// const stopSlide = () => {
+//     clearInterval(intervalId); // Clear the interval using the stored ID
+// }
+    </script>
+
+
 
 
     <%- include('../includes/footer.ejs')%>
