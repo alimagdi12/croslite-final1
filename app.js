@@ -23,27 +23,6 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 
-// const storage = multer.diskStorage({
-//   destination:'/upload/',
-//   filename:function(req,file,cb){
-//     cb(null,'file'+Date.now()+path.extname(file.originalname))
-//   }
-// })
-
-// const upload = multer({
-//   storage:storage,
-//   fileFilter:function(req,file,cb){
-//     var validExt=['.png','jpg','jpeg'];
-//     var ext = path.ext(file.originalname);
-//     if(!validExt.includes(ext)){
-//       return cb( new Error("please enter a valid extension"))
-//     }
-//     cb(null,true)
-//   },
-//   limits:{fileSize:125000*10},
-// })
-
-
 
 const csrfProtection = csrf();
 
@@ -90,9 +69,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/admin', adminRoutes);
-app.post('/upload',(req,res,next)=>{
-  res.send("csrf verified")
-})
 app.use(shopRoutes);
 app.use(authRoutes);
 app.use(userRoutes)
