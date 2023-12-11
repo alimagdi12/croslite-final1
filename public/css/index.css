@@ -42,8 +42,76 @@
         display: inline-block;
     }
 
+.about{
+    text-align: center;
+    position:relative;
+    width:100%;
+    height:auto;
+    margin-top:100px;
+    background-color: rgb(240, 238, 238);
+    padding-top: 40px;
+}
+
+.about hr{
+    background-color:rgb(32, 104, 53);
+    height:5px;
+    width:10%;
+    position:absolute;
+    left: 45%;
+    top:105px;
+}
+
+.about .cards-section{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-top: 50px;
+    position:relative;
+}
+
+.about .cards-section .card{
+    width:38%;
+    height:250px;
+    background-color: rgb(43, 42, 42);
+    margin:40px;
+    border-radius: 15px;
+    position:relative;
+}
+
+.about .cards-section .card h1{
+    color: rgb(135, 71, 71);
+    position: absolute;
+    right:3px;font-size:60px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+.about .cards-section .card h2{
+    color:rgb(231, 231, 231);
+    position: absolute;
+    top:30%;
+    left:10%;
+}
+
+.about .cards-section .card p{
+    position: absolute;
+    left: 10%;
+    top:50%;
+    width:80%;
+    color:rgb(165, 165, 165)
+}
+
+
+
+
+
+
+
+
+
 .home-menu{
     width: 100%;
+    margin-top: 60px;
 }
 .home-menu a{
     font-size: 33px;
@@ -144,123 +212,7 @@
 }
 
 
-.identity{
-    display: block;
-    text-align: center;
-    height: auto;
-    margin-top: 30px;
-    margin-bottom: 100px;
-}
-.identity .header{
-    padding: 20px;
-    margin-bottom: 30px;
-}
 
-.identity .header h1{
-    font-size: 30px;
-    font-weight: 600;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-}
-.identity .body .img img{
-    width: 300px;
-    height: 300px;
-}
-
-.identity .body{
-    display: flex;
-    position: relative;
-    height: auto;
-}
-
-.identity .body .img{
-    width: 50%;
-    display: block;
-}
-.identity .body .img .fac1{
-    position: absolute;
-    top:5px;
-    left: 110px;
-}
-.identity .body .img .fac2{
-    position: absolute;
-    top:225px;
-    left:230px;
-}
-.identity .body .img .fac3{
-    position: absolute;
-    top:45px;
-    left:380px;
-}
-
-.identity .body .details{
-    width: 50%;
-    background-color: rgb(248, 248, 248);
-    height: auto;
-    position: relative;
-}
-.identity .body .details ul{
-    width: 100%;
-}
-.identity .body .details ul li{
-    text-align: left;
-    width: 100%;
-    height: auto;
-    font-size: 22px;
-    position: relative;
-    
-}
-.identity .body .details ul li #first-open,
-.identity .body .details ul li #second-open,
-.identity .body .details ul li #third-open,
-.identity .body .details ul li #fourth-open{
-    position: absolute;
-    right: 0;
-    color: rgb(2, 2, 65);
-    cursor: pointer;
-}
-.identity .body .details ul li #first-close,
-.identity .body .details ul li #second-close,
-.identity .body .details ul li #third-close,
-.identity .body .details ul li #fourth-close{
-    position: absolute;
-    right: 0;
-    color: rgb(2, 2, 144);
-    cursor: pointer;
-}
-.identity .body .details ul li i {
-    color: rgb(193, 193, 193) ;
-    margin-right: 5px;
-}
-
-.identity .body .details .first,
-.identity .body .details .second,
-.identity .body .details .third,
-.identity .body .details .fourth{
-    margin: auto;
-    background-color: white ;
-    width: 80%;
-    height: auto;
-    height: auto;
-    padding: 15px;
-    margin-top: 50px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-.identity .body .details #first-close,
-.identity .body .details #second-close,
-.identity .body .details #third-close,
-.identity .body .details #fourth-close,
-.identity .body .details h6{
-    display: none;
-}
-.identity .body .details h6{
-    font-size: 17px;
-    font-weight: 400;
-    text-align: left;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
 
 .home-img{
     display: flex;
@@ -279,6 +231,7 @@
     display: block;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 
 } 
 .home-img .column img{
@@ -286,14 +239,75 @@
     height: 100%;
 }
 
+.home-img .column a{
+    display:none;
+}
+.home-img .column a button{
+    padding: 30px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(32, 104, 53);
+    color:white;
+    position :absolute;
+    left:35%;
+    top: 45%;
+    cursor: pointer;
+}
 .home-img .row {
     width: 35%;
     display: block;
     position: relative;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
+.home-img .row .one a{
+    display:none;
+}
+
+.home-img .row .one a button{
+    padding: 15px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(32, 104, 53);
+    color:white;
+    position :absolute;
+    left:35%;
+    top: 16%;
+    cursor: pointer;
+}
+.home-img .row .two a{
+    display:none;
+}
+
+.home-img .row .two a button{
+    padding: 15px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(32, 104, 53);
+    color:white;
+    position :absolute;
+    left:35%;
+    top: 56%;
+    cursor: pointer;
+}
+
+.home-img .row .three a{
+    display:none;
+}
+
+.home-img .row .three a button{
+    padding: 15px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(32, 104, 53);
+    color:white;
+    position :absolute;
+    left:28%;
+    top: 74%;
+    cursor: pointer;
+}
 .home-img .row div{
     height: 45.5%;
     width: 100%;
@@ -388,6 +402,52 @@
         height: 33.3%;
         margin-top: -20px;
     }
+    .about{
+        width:100%;
+    }
+    .about .cards-section{
+        width:100%;
+    }
+    .about .cards-section .card{
+        width:80%;
+        margin-left:20px;
+    }
+    .about .cards-section .card h2{
+        left:18%
+    }
+    .home-img .row .one a button{
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:17%;
+        top: 5%;
+        cursor: pointer;
+    }
+    .home-img .row .two a button{
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:10%;
+        top: 42%;
+        cursor: pointer;
+    }
+    .home-img .row .one a button{
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:17%;
+        top: 17%;
+        cursor: pointer;
+    }
 
 }
 @media (min-width:300px) and (max-width:385px) {
@@ -463,6 +523,29 @@
         height: 33.3%;
         margin-top: -20px;
     }
+    .about{
+        width:100%;
+    }
+    .about .cards-section{
+        width:100%;
+    }
+    .about .cards-section .card{
+        width:80%;
+        margin-left:20px;
+        
+    }
+    .about .cards-section .card h2{
+        left:10%
+    }
+    .home-img .row .one a button{
+        top:11.5%;
+        left:30%
+    }
+    .home-img .row .two a button{
+        top:41.5%;
+        left:30%
+    }
+    
 }
 
 @media (min-width:385px) and (max-width:425px) {
@@ -537,6 +620,30 @@
         height: 33.3%;
         margin-top: -20px;
     }
+    .about{
+        width:100%;
+    }
+    .about .cards-section{
+        width:100%;
+    }
+    .about .cards-section .card{
+        width:80%;
+        margin-left:20px;
+
+    }
+    .about .cards-section .card h2{
+        left:15%
+    }
+
+    .home-img .row .one a button{
+        top:11.5%;
+        left:30%
+    }
+    .home-img .row .two a button{
+        top:41.5%;
+        left:30%
+    }
+    
 }
 @media (min-width:425px) and (max-width:600px) {
     .home-menu{
@@ -610,7 +717,30 @@
         height: 33.3%;
         margin-top: -20px;
     }
-    
+    .about{
+        width:100%;
+    }
+    .about .cards-section{
+        width:100%;
+    }
+    .about .cards-section .card{
+        width:80%;
+        margin-left:20px;
+
+    }
+    .home-menu hr{
+        width:31%;
+        display: inline-block;
+        margin-bottom: 9px;
+    }
+    .home-img .row .one a button{
+        top:11.5%;
+        left:30%
+    }
+    .home-img .row .two a button{
+        top:41.5%;
+        left:30%
+    }
     
 }
 @media (min-width:600px) and (max-width:810px) {
@@ -642,6 +772,54 @@
     }
     .identity .body .details ul li{
         font-size: 15px;
+    }.about{
+        width:100%;
+    }
+    .about .cards-section{
+        width:100%;
+    }
+    .about .cards-section .card{
+        width:40%;
+        margin:10px;
+
+    }
+    .home-menu hr{
+        width:37%;
+        display: inline-block;
+        margin-bottom: 9px;
+    }
+    .home-img .column a button{
+        padding: 30px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:27%;
+        top: 45%;
+        cursor: pointer;
+    }
+    .home-img .row .one a button{
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:17%;
+        top: 17%;
+        cursor: pointer;
+    }
+    .home-img .row .two a button{
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:17%;
+        top: 57%;
+        cursor: pointer;
     }
 }
 
@@ -676,6 +854,54 @@
     .identity .body .details ul li{
         font-size: 15px;
     }
+    .about{
+        width:100%;
+    }
+    .about .cards-section{
+        width:100%;
+    }
+    .about .cards-section .card{
+        width:43%;
+        margin-left: 10px;
+    }
+    .home-menu hr{
+        width:37%;
+        display: inline-block;
+        margin-bottom: 9px;
+    }
+    .home-img .column a button{
+        padding: 30px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:27%;
+        top: 45%;
+        cursor: pointer;
+    }
+    .home-img .row .one a button{
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:17%;
+        top: 17%;
+        cursor: pointer;
+    }
+    .home-img .row .two a button{
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:17%;
+        top: 57%;
+        cursor: pointer;
+    }
 }
 
 @media(min-width:910px) and  (max-width:950px) {
@@ -706,6 +932,54 @@
         position: absolute;
         top:45px;
         left:150px;
+    }
+    .about{
+        width:100%;
+    }
+    .about .cards-section{
+        width:100%;
+    }
+    .about .cards-section .card{
+        width:43%;
+        margin-left: 10px;
+    }
+    .home-menu hr{
+        width:39%;
+        display: inline-block;
+        margin-bottom: 9px;
+    }
+    .home-img .column a button{
+        padding: 30px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:27%;
+        top: 45%;
+        cursor: pointer;
+    }
+    .home-img .row .one a button{
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:25%;
+        top: 17%;
+        cursor: pointer;
+    }
+    .home-img .row .two a button{
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: rgb(32, 104, 53);
+        color:white;
+        position :absolute;
+        left:25%;
+        top: 57%;
+        cursor: pointer;
     }
 }
 
@@ -795,6 +1069,21 @@
         top:45px;
         left:250px;
     }
+    .about{
+        width:100%;
+    }
+    .about .cards-section{
+        width:100%;
+    }
+    .about .cards-section .card{
+        width:43%;
+        margin-left: 10px;
+    }
+    .home-menu hr{
+        width:40%;
+        display: inline-block;
+        margin-bottom: 9px;
+    }
 }
 
 
@@ -881,6 +1170,11 @@
         position: absolute;
         top:45px;
         left:285px;
+    }
+    .home-menu hr{
+        width:42%;
+        display: inline-block;
+        margin-bottom: 9px;
     }
 }
 

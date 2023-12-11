@@ -6,65 +6,79 @@
 <body>
     <%- include('../includes/navigation.ejs')%>
     
-    <div class="slideShow">
-        <!-- <button onclick="stopSlide()">stop</button>
-        <button onclick="startSlide()">slide show</button><br> -->
-        <i class="fa-solid fa-arrow-left" id="left" onclick="slideLeft()"  ></i>
-        <img src="/img/header.webp" class="slide active" data-aos="fade-left">
-        <img src="/img/header2.webp" class="slide" data-aos="fade-left">
-        <img src="/img/header3.avif" class="slide" data-aos="fade-left">
-        <img src="/img/header4.webp" class="slide" data-aos="fade-left">
-        <img src="/img/header5.jpg" class="slide" data-aos="fade-left">
-        <img src="/img/header6.webp" class="slide" data-aos="fade-left">
-        <i class="fa-solid fa-arrow-right" id="right" style="margin-left: 10px;" onclick="slideRight()" id="right"></i>
-    </div>
+<div class="slideShow">
+    <!-- <button onclick="stopSlide()">stop</button>
+    <button onclick="startSlide()">slide show</button><br> -->
+    <i class="fa-solid fa-arrow-left" id="left" onclick="slideLeft()"  ></i>
+    <img src="/img/header.webp" class="slide active" data-aos="fade-left">
+    <img src="/img/header2.webp" class="slide" data-aos="fade-left">
+    <img src="/img/header3.avif" class="slide" data-aos="fade-left">
+    <img src="/img/header4.webp" class="slide" data-aos="fade-left">
+    <img src="/img/header5.jpg" class="slide" data-aos="fade-left">
+    <img src="/img/header6.webp" class="slide" data-aos="fade-left">
+    <i class="fa-solid fa-arrow-right" id="right" style="margin-left: 10px;" onclick="slideRight()" id="right"></i>
+</div>
     
-    
-    <div class="identity">
-        <div class="header">
-            <h1>Who Are We ?</h1>
+
+
+<div class="about">
+    <h1>Why Choose Us?</h1>
+    <hr>
+    <div class="cards-section">
+        <div class="card" data-image="/img/identity.jpeg" data-aos="fade-right">
+            <h1>01</h1>
+            <h2>Who Are We?</h2>
+            <p>We are a group of Egyptian investors who are willing to be one of the best start-ups in the Middle East</p>
         </div>
-        <div class="body">
-            <div class="img">
-                <img src="/img/factory.jpg" alt="" class="fac1" data-aos="fade-right">
-                <img src="/img/factory2.webp" alt="" class="fac3" data-aos="fade-left">
-                <img src="/img/factory3.jpg" alt="" class="fac2" data-aos="fade-up">
-            </div>
-            <div class="details">
-                <ul>
-                    <div class="first" data-aos="fade-in"  data-aos-duration="1000">
-                        <li> <i class="fa-regular fa-circle-question"></i> Who Are We  <i class="fa fa-fw fa-chevron-circle-down mt-1"  id="first-open" onclick="firstOpen()"></i>
-                            <i class="fa fa-fw fa-chevron-circle-up mt-1" id="first-close" onclick="firstClose()"></i>
-                        </li>
-                        <h6 id="first-details"> We are a group of egyptian investors </h6>
-                    </div>
-    
-                    <div class="second" data-aos="fade-in"  data-aos-duration="1500">
-                        <li><i class="fa-regular fa-circle-question"></i> What is our product  <i class="fa fa-fw fa-chevron-circle-down mt-1" id="second-open" onclick="secondOpen()"></i>
-                            <i class="fa fa-fw fa-chevron-circle-up mt-1" id="second-close" onclick="secondClose()"></i>
-                        </li>
-                        <h6 id="second-details"> our products is one of the best products in the Egyptian market </h6>
-                    </div>
-                    
-                    <div class="third" data-aos="fade-in"  data-aos-duration="2000">
-                        <li> <i class="fa-regular fa-circle-question"></i> Where Are We  <i class="fa fa-fw fa-chevron-circle-down mt-1" id="third-open" onclick="thirdOpen()"></i>
-                            <i class="fa fa-fw fa-chevron-circle-up mt-1" id="third-close" onclick="thirdClose()"></i>
-                        </li>
-                        <h6 id="third-details"> Our main Factory is in PortSaid one one the leading cities in the Egyptian industrial market </h6>
-                    </div>
-    
-                    <div class="fourth" data-aos="fade-in"  data-aos-duration="2500">
-                        <li> <i class="fa-regular fa-circle-question"></i> What is our Goal  <i class="fa fa-fw fa-chevron-circle-down mt-1" id="fourth-open" onclick="fourthOpen()"></i>
-                            <i class="fa fa-fw fa-chevron-circle-up mt-1" id="fourth-close" onclick="fourthClose()"></i>
-                        </li>
-                        <h6 id="fourth-details"> Our short-term goal is to be one of the leading companies in the egyptian market </h6>
-                    </div>
-                </ul>
-            </div>
+        <div class="card" data-image="/img/factory2.webp" data-aos="fade-right">
+            <h1>02</h1>
+            <h2>What is our product?</h2>
+            <p>Our product is one of the best products in the Egyptian market</p>
+        </div>
+        <div class="card" data-image="/img/location.jpg" data-aos="fade-right">
+            <h1>03</h1>
+            <h2>Where Are We?</h2>
+            <p>Our main factory is in Port Said, one of the leading cities in the Egyptian industrial market</p>
+        </div>
+        <div class="card" data-image="/img/goal.webp" data-aos="fade-right">
+            <h1>04</h1>
+            <h2>What is our Goal?</h2>
+            <p>Our short-term goal is to be one of the leading companies in the Egyptian market</p>
         </div>
     </div>
-    
-    
+</div>
+
+<script>
+    const cardsSection = document.querySelector('.cards-section');
+
+    cardsSection.addEventListener('mouseover', function(event) {
+        const card = event.target.closest('.card');
+        if (card) {
+            const image = card.getAttribute('data-image');
+            showBg(card, image);
+        }
+    });
+
+    cardsSection.addEventListener('mouseout', function(event) {
+        const card = event.target.closest('.card');
+        if (card) {
+            hideBg(card);
+        }
+    });
+
+    function showBg(card, image) {
+        card.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${image}')`;
+        card.style.backgroundPosition = "center";
+        card.style.backgroundSize = "cover";
+        card.querySelector('p').style.color = 'white';
+    }
+
+    function hideBg(card) {
+        card.style.backgroundImage = 'none';
+        card.querySelector('p').style.color = 'rgb(165, 165, 165)';
+    }
+</script>
+
 
 
 
@@ -220,15 +234,94 @@
 
 
 <div class="home-img">
-    <div class="column">
-        <img src="./img/crocs2.jpeg" alt="" data-aos="fade-right">
+    <div class="column" id="column" onmousemove="showFour()" onmouseleave="hideFour()">
+        <img id="columnImg" src="./img/crocs2.jpeg" alt="" data-aos="fade-right">
+        <a href="/products" id="buttonFour"><button>Shop Now</button></a>
     </div>
     <div class="row">
-        <div class="one"><img src="./img/crocs.jpeg" alt="" data-aos="fade-left"></div>
-        <div class="two"><img src="./img/crocs3.jpg" alt="" data-aos="fade-up"></div>
-        <div class="three"><img src="./img/crocs4.webp" alt=""data-aos="fade-left"></div>
+        <div class="one" id="one" onmousemove="showOne()" onmouseleave="hideOne()">
+            <img id="rowImg1" src="./img/crocs.jpeg" alt="" data-aos="fade-left">
+            <a href="/products" id="buttonOne"><button>Shop Now</button></a>
+        </div>
+        <div class="two" id="two" onmousemove="showTwo()" onmouseleave="hideTwo()">
+            <img id="rowImg2" src="./img/crocs3.jpg" alt="" data-aos="fade-up">
+            <a href="/products" id="buttonTwo"><button>Shop Now</button></a>
+        </div>
+        <div class="three" id="three" onmousemove="showThree()" onmouseleave="hideThree()">
+            <img id="rowImg3" src="./img/crocs4.webp" alt=""data-aos="fade-left">
+            <a href="/products" id="buttonThree"><button>Shop Now</button></a>
+        </div>
     </div>
 </div>
+
+<script>
+    buttonFour = document.getElementById('buttonFour');
+    column = document.getElementById('column');
+    columnImg = document.getElementById('columnImg');
+    const showFour=()=>{
+        buttonFour.style.display='block';
+        columnImg.style.display = 'none';
+        column.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./img/crocs2.jpeg")';
+        column.style.backgroundPosition = "bottom center";
+        column.style.backgroundSize = "cover";
+    }
+    const hideFour=()=>{
+        buttonFour.style.display='none';
+        columnImg.style.display = 'block';
+        
+    }
+
+    buttonOne = document.getElementById('buttonOne');
+    one = document.getElementById('one');
+    rowImg1 = document.getElementById('rowImg1');
+    const showOne=()=>{
+        buttonOne.style.display='block';
+        rowImg1.style.display = 'none';
+        one.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./img/crocs.jpeg")';
+        column.style.backgroundPosition = "center bottom";
+        column.style.backgroundSize = "cover";
+    }
+    const hideOne=()=>{
+        buttonOne.style.display='none';
+        rowImg1.style.display = 'block';
+        
+    }
+
+
+    buttonTwo = document.getElementById('buttonTwo');
+    two = document.getElementById('two');
+    rowImg2 = document.getElementById('rowImg2');
+    const showTwo=()=>{
+        buttonTwo.style.display='block';
+        rowImg2.style.display = 'none';
+        two.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./img/crocs3.jpg")';
+        two.style.backgroundPosition = "center";
+        two.style.backgroundSize = "cover";
+    }
+    const hideTwo=()=>{
+        buttonTwo.style.display='none';
+        rowImg2.style.display = 'block';
+        two.style.backgroundImage='none'
+    }
+
+
+    
+    buttonThree = document.getElementById('buttonThree');
+    three = document.getElementById('three');
+    rowImg3 = document.getElementById('rowImg3');
+    const showThree=()=>{
+        buttonThree.style.display='block';
+        rowImg3.style.display = 'none';
+        three.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./img/crocs3.jpg")';
+        three.style.backgroundPosition = "center";
+        three.style.backgroundSize = "cover";
+    }
+    const hideThree=()=>{
+        buttonThree.style.display='none';
+        rowImg3.style.display = 'block';
+        three.style.backgroundImage='none'
+    }
+</script>
 
     
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -237,95 +330,6 @@
 </script>
 
 
-<script>
-    var open = document.getElementById('first-open');
-    var close = document.getElementById('first-close');
-    var firstDetails = document.getElementById('first-details')
-    const firstOpen =()=>{
-        if(open){
-            firstDetails.style.display='block';
-            open.style.display='none';
-            close.style.display='inline-block';
-        }
-    }
-    const firstClose =()=>{
-        if(close){
-            firstDetails.style.display='none';
-            open.style.display='inline-block';
-            close.style.display='none';
-        }
-    }
-
-
-    var secondopen = document.getElementById('second-open');
-    var secondclose = document.getElementById('second-close');
-    var secondDetails = document.getElementById('second-details')
-    const secondOpen =()=>{
-        if(secondopen){
-            secondDetails.style.display='inline-block';
-            secondopen.style.display='none';
-            secondclose.style.display='inline-block';
-        }
-    }
-    const secondClose =()=>{
-        if(secondClose){
-            secondDetails.style.display='none';
-            secondopen.style.display='inline-block';
-            secondclose.style.display='none';
-        }
-    }
-
-
-    var thirdopen = document.getElementById('third-open');
-    var thirdclose = document.getElementById('third-close');
-    var thirdDetails = document.getElementById('third-details')
-    const thirdOpen =()=>{
-        if(thirdopen){
-            thirdDetails.style.display='inline-block';
-            thirdopen.style.display='none';
-            thirdclose.style.display='inline-block';
-        }
-    }
-    const thirdClose =()=>{
-        if(thirdclose){
-            thirdDetails.style.display='none';
-            thirdopen.style.display='inline-block';
-            thirdclose.style.display='none';
-        }
-    }
-
-
-    var fourthopen = document.getElementById('fourth-open');
-    var fourthclose = document.getElementById('fourth-close');
-    var fourthDetails = document.getElementById('fourth-details')
-    const fourthOpen =()=>{
-        if(fourthopen){
-            fourthDetails.style.display='inline-block';
-            fourthopen.style.display='none';
-            fourthclose.style.display='inline-block';
-        }
-    }
-    const fourthClose =()=>{
-        if(fourthclose){
-            fourthDetails.style.display='none';
-            fourthopen.style.display='inline-block';
-            fourthclose.style.display='none';
-        }
-    }
-</script>
-<!-- <script>
-    var img = document.getElementById('img');
-    var imgContent = document.getElementById('img-content');
-    const mouseEnter=()=>{
-        img.style.opacity=.5
-        imgContent.style.display='block'
-
-    }
-    const mouseLeave=()=>{
-        img.style.opacity=1;
-        imgContent.style.display='none'
-    }
-</script> -->
 <script>
     window.addEventListener('scroll', function() {
       var header = document.getElementById("header");
@@ -371,8 +375,6 @@ intervalId = setInterval(slideRight, 3000); // Store the interval ID
 //     clearInterval(intervalId); // Clear the interval using the stored ID
 // }
     </script>
-
-
 
 
     <%- include('../includes/footer.ejs')%>
