@@ -66,7 +66,10 @@ app.use((req, res, next) => {
 });
 
 app.use('/admin', adminRoutes);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3de04f216f52c7cfdf62a693ebbe1816c8ee5dc3
 app.use(shopRoutes);
 app.use(authRoutes);
 app.use(userRoutes)
