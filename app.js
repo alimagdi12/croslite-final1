@@ -21,9 +21,6 @@ const store = new MongoDBStore({
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-
-
-
 const csrfProtection = csrf();
 
 
